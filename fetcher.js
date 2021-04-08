@@ -29,7 +29,7 @@ request(`${URL}`, (error, response, body) => {
         if (input === 'y') {
           fs.writeFile(`${filePath}`, body, (err) => {
             if (err) throw err;
-            console.log('The file has been saved');
+            console.log(`Downloaded and saved ${body.length} bytes to ${filePath}`);
             rl.close();
           });
         } else {
